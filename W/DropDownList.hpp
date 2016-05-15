@@ -18,7 +18,9 @@ public:
     void setActive(bool value);
     bool is_selected(int xx, int yy);
     string getSelected();
+    int getSelectedIndex();
     void AddItem(string x);
+    void RemoveItem(int s);
     DropDownList(float xx, float yy, float aa, Color coll, bool akt, Window *win, vector<string> it, int i_vis);
 
 };

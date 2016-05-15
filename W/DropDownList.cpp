@@ -41,6 +41,28 @@ string DropDownList::getSelected()
     }
 }
 
+int DropDownList::getSelectedIndex()
+{
+    return selected_item;
+}
+
+void DropDownList::RemoveItem(int s)
+{
+    items.erase(items.begin()+s);
+    if(selected_item == (signed)items.size() )
+    {
+        selected_item--;
+
+    }
+    if(selected_item < (signed)items.size() - 1)
+    {
+//        selected_item ++;
+    }
+    cout<<selected_item <<": "<<items[selected_item]<<endl;
+    for(size_t i=0;i<items.size();++i)
+        cout<<items[i]<<endl;
+}
+
 void DropDownList::AddItem(string x)
 {
     items.push_back(x);

@@ -33,34 +33,36 @@
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add library="lib/libgraphics.a" />
-			<Add library="lib/libgraphicsd.a" />
-			<Add library="lib/libsdl_ttf.a" />
-			<Add library="lib/libSDL.dll.a" />
-			<Add library="lib/libSDLmain.a" />
+			<Add library="lib\libgraphics.a" />
+			<Add library="lib\libgraphicsd.a" />
+			<Add library="lib\libsdl_ttf.a" />
+			<Add library="lib\libSDL.dll.a" />
+			<Add library="lib\libSDLmain.a" />
 			<Add directory="lib" />
 		</Linker>
-		<Unit filename="Application.cpp" />
-		<Unit filename="Application.hpp" />
-		<Unit filename="Button.cpp" />
-		<Unit filename="Button.hpp" />
-		<Unit filename="CheckBox.cpp" />
-		<Unit filename="CheckBox.hpp" />
-		<Unit filename="DropDownList.cpp" />
-		<Unit filename="DropDownList.hpp" />
-		<Unit filename="Label.cpp" />
-		<Unit filename="Label.hpp" />
-		<Unit filename="NumberBox.cpp" />
-		<Unit filename="NumberBox.hpp" />
-		<Unit filename="TextBox.cpp" />
-		<Unit filename="TextBox.hpp" />
-		<Unit filename="Window.cpp" />
-		<Unit filename="Window.hpp" />
+		<Unit filename="W/Application.cpp" />
+		<Unit filename="W/Application.hpp" />
+		<Unit filename="W/Button.cpp" />
+		<Unit filename="W/Button.hpp" />
+		<Unit filename="W/CheckBox.cpp" />
+		<Unit filename="W/CheckBox.hpp" />
+		<Unit filename="W/DropDownList.cpp" />
+		<Unit filename="W/DropDownList.hpp" />
+		<Unit filename="W/Label.cpp" />
+		<Unit filename="W/Label.hpp" />
+		<Unit filename="W/NumberBox.cpp" />
+		<Unit filename="W/NumberBox.hpp" />
+		<Unit filename="W/TextBox.cpp" />
+		<Unit filename="W/TextBox.hpp" />
+		<Unit filename="W/Window.cpp" />
+		<Unit filename="W/Window.hpp" />
+		<Unit filename="W/widget.cpp" />
+		<Unit filename="W/widget.hpp" />
+		<Unit filename="core.cpp" />
+		<Unit filename="core.hpp" />
+		<Unit filename="data.txt" />
 		<Unit filename="include/graphics.hpp" />
-		<Unit filename="log.txt" />
 		<Unit filename="main.cpp" />
-		<Unit filename="widget.cpp" />
-		<Unit filename="widget.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
