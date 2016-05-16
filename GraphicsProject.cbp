@@ -33,13 +33,19 @@
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add library="lib\libgraphics.a" />
-			<Add library="lib\libgraphicsd.a" />
-			<Add library="lib\libsdl_ttf.a" />
-			<Add library="lib\libSDL.dll.a" />
-			<Add library="lib\libSDLmain.a" />
+			<Add library="lib/libgraphics.a" />
+			<Add library="lib/libgraphicsd.a" />
+			<Add library="lib/libsdl_ttf.a" />
+			<Add library="lib/libSDL.dll.a" />
+			<Add library="lib/libSDLmain.a" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="GameCore.cpp" />
+		<Unit filename="GameCore.hpp" />
+		<Unit filename="SudokuNumberBox.cpp" />
+		<Unit filename="SudokuNumberBox.hpp" />
+		<Unit filename="SudokuWindow.cpp" />
+		<Unit filename="SudokuWindow.hpp" />
 		<Unit filename="W/Application.cpp" />
 		<Unit filename="W/Application.hpp" />
 		<Unit filename="W/Button.cpp" />
@@ -58,10 +64,8 @@
 		<Unit filename="W/Window.hpp" />
 		<Unit filename="W/widget.cpp" />
 		<Unit filename="W/widget.hpp" />
-		<Unit filename="core.cpp" />
-		<Unit filename="core.hpp" />
-		<Unit filename="data.txt" />
 		<Unit filename="include/graphics.hpp" />
+		<Unit filename="input.txt" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

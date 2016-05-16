@@ -30,11 +30,17 @@ int to_int(string s)
 Window::Window()
 {
     focus = -1;
-
+    valid = true;
 }
 
 void Window::handle(event ev)
 {
+    if(!valid)
+    {
+        Update();
+    }
+
+
     bool talalt=false;
     bool re_focus = false;
     if(ev.type==ev_mouse && ev.button==btn_left)
@@ -106,8 +112,15 @@ void Window::addWidget(Widget *w)
     widgets.push_back(w);
 }
 
+void Window::invalidate()
+{
+    valid = false;
+}
 
+void Window::Update()
+{
 
+}
 
 }
 

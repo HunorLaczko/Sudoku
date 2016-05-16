@@ -9,6 +9,9 @@
 #include "DropDownList.hpp"
 #include "CheckBox.hpp"
 #include "Button.hpp"
+#include "../SudokuTable.hpp"
+#include "../SudokuNumberBox.hpp"
+#include "../GameCore.hpp"
 
 namespace W
 {
@@ -19,10 +22,11 @@ int to_int(string s);
 
 class Window
 {
-private:
+protected:
     std::vector<Widget*> widgets;
     Widget* kivalasztva;
     int focus;
+    bool valid;
 
 
 public:
@@ -34,8 +38,11 @@ public:
     void setFocus(Widget *w);
     void addWidget(Widget *w);
 
+    virtual void Update();
+    void invalidate();
 
 };
+
 }
 
 #endif // WINDOW_HPP_INCLUDED

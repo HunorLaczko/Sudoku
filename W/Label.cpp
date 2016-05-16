@@ -1,5 +1,4 @@
- #include "Widget.hpp"
- #include "Label.hpp"
+ #include "Window.hpp"
 
  using namespace W;
 

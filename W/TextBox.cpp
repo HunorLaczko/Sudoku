@@ -1,5 +1,4 @@
-#include "widget.hpp"
-#include "TextBox.hpp"
+#include "Window.hpp"
 
 namespace W
 {

@@ -3,7 +3,6 @@
 
 #include "graphics.hpp"
 #include<iostream>
-#include<windows.h>
 #include<cmath>
 #include<time.h>
 #include<vector>

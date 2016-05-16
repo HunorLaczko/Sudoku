@@ -1,5 +1,5 @@
 #include "graphics.hpp"
-#include "Widget.hpp"
+#include "widget.hpp"
 
 
 namespace W

@@ -48,4 +48,12 @@ void NumberBox::handle(event ev)
             value-=step;
         }
     }
+    if(ev.type==ev_mouse && ev.button==btn_wheeldown && value<interval_end)
+    {
+        value+=step;
+    }
+    if(ev.type==ev_mouse && ev.button==btn_wheelup && value>interval_start)
+    {
+        value-=step;
+    }
 }
