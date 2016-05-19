@@ -37,24 +37,26 @@ void SudokuGame::debug()
     }
 }
 
-vector<int> SudokuGame::SendCurrentState()
+vector<int_bool> SudokuGame::SendCurrentState()
 {
-    if(level<level_nr)
+    if(level==level_nr)
     {
-        vector<int> tmp(&table[level*81],&table[level*81+81]);
-//        for(int i=0;i<9;i++)
-//        {
-//            for(int j=0; j<9; j++)
-//            {
-//                cout<<tmp[i*9 + j]<<" ";
-//            }
-//            cout<<endl;
-//        }
-        return tmp;
+        level = 0;
     }
-    else
-    {
-        vector<int> tmp;
+//    vector<bool> tmp_validatity;
+
+
+        vector<int_bool> tmp;
+        for(int i=0;i<81;i++)
+        {
+            tmp.push_back(int_bool(table[level*81+i],true));
+        }
         return tmp;
-    }
+
+
+}
+
+void SudokuGame::getNewState(vector<int> tmp)
+{
+    table = tmp;
 }

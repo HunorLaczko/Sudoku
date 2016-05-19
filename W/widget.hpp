@@ -38,6 +38,7 @@ protected:
     Window *ablak;
 public:
     Widget(float xx, float yy, float aa, float bb, Color coll, bool akt, Window *win);
+    virtual ~Widget(){}
     virtual void draw()=0;
     virtual void handle(genv::event ev);
     virtual void setActive(bool value);

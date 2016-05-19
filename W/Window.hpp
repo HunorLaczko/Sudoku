@@ -31,7 +31,7 @@ protected:
 
 public:
     Window();
-
+    virtual ~Window(){}
     unsigned int size();
     void handle(event ev);
     void draw();

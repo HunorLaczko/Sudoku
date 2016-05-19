@@ -9,8 +9,12 @@ namespace W
     class SudokuWindow:public Window
     {
         SudokuGame game;
+        vector<SudokuNumberBox*> numbers;
+        Button *test;
     public:
         SudokuWindow();
+        ~SudokuWindow(){}
+        void Update();
     };
 }
 

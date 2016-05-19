@@ -3,9 +3,19 @@
 
 #include<iostream>
 #include<vector>
+#include<map>
 #include<fstream>
 
 using namespace std;
+
+class int_bool
+{
+
+public:
+    int value;
+    bool wrong;
+    int_bool(int _value, bool _wrong):value(_value),wrong(_wrong){}
+};
 
 class SudokuGame
 {
@@ -15,7 +25,8 @@ class SudokuGame
 public:
     SudokuGame();
     void debug();
-    vector<int> SendCurrentState();
+    vector<int_bool> SendCurrentState();
+    void getNewState(vector<int> tmp);
 };
 
 
