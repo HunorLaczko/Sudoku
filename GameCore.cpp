@@ -43,13 +43,56 @@ vector<int_bool> SudokuGame::SendCurrentState()
     {
         level = 0;
     }
-//    vector<bool> tmp_validatity;
+    vector<bool> tmp_validity(81,true);
 
+    for(int i=0 ; i < 9; i++)
+    {
+        for(int j=0; j<8; j++)
+        {
+            for(int k=j+1; k<9;k++)
+            {
+                //column check
+                if(table[i*9+j] == table[i*9+k] && table[i*9+j]!=0 && table[i*9+k]!=0)
+                {
+                    tmp_validity[i*9+j] = false;
+                    tmp_validity[i*9+k] = false;
+                }
+
+                //row check
+                if(table[j*9+i] == table[k*9+i] && table[j*9+i]!=0 && table[k*9+i]!=0)
+                {
+                    tmp_validity[j*9+i] = false;
+                    tmp_validity[k*9+i] = false;
+                }
+            }
+        }
+    }
+
+    //group check
+    for(int l=0; l<81; l+=27)// sorban lepteti a harom csoportot
+    {
+        for(int k=0; k<9; k+=3)//oszlopban lepteti a harom csoportot
+        {
+            for(int i=0; i<27; i++)//egy csoporton beluli bejaras
+            {
+                for(int j=0; j<27; j++)
+                {
+                    if(table[l+k+i] == table[l+k+j] && table[l+k+j]!=0 && table[l+k+i]!=0 && l+k+i!=l+k+j)
+                    {
+                        tmp_validity[l+k+i] = false;
+                        tmp_validity[l+k+j]=false;
+                    }
+                    if(j!=0 && (j+1)%3 == 0){j+=6;}
+                }
+                if(i!=0 && (i+1)%3 == 0){i+=6;}
+            }
+        }
+    }
 
         vector<int_bool> tmp;
         for(int i=0;i<81;i++)
         {
-            tmp.push_back(int_bool(table[level*81+i],true));
+            tmp.push_back(int_bool(table[level*81+i],!tmp_validity[i]));
         }
         return tmp;
 
@@ -58,5 +101,11 @@ vector<int_bool> SudokuGame::SendCurrentState()
 
 void SudokuGame::getNewState(vector<int> tmp)
 {
-    table = tmp;
+    for(size_t i=0; i< tmp.size(); i++)
+    {
+        if(tmp[i]>=0 && tmp[i]<=9)
+        {
+            table[i]=tmp[i];
+        }
+    }
 }

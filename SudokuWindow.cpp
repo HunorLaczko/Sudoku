@@ -20,13 +20,13 @@ SudokuWindow::SudokuWindow()
             if(j%3==0) tmp_y += 10;
             if(tmp[i*9+j].value != 0)
             {
-                nr = new SudokuNumberBox(tmp_x, tmp_y,width,width,{255,255,255},true,this,tmp[i*9+j].value,false);
+                nr = new SudokuNumberBox(tmp_y, tmp_x,width,width,{255,255,255},true,this,tmp[i*9+j].value,false);
 
             }
             else
             {
 
-                nr = new SudokuNumberBox(tmp_x, tmp_y,width,width,{255,255,255},true,this,tmp[i*9+j].value,true);
+                nr = new SudokuNumberBox(tmp_y, tmp_x,width,width,{255,255,255},true,this,tmp[i*9+j].value,true);
 
             }
             widgets.push_back(nr);
