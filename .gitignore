@@ -2,3 +2,5 @@
 *.o
 *.depend
 *.layout
+GraphicsProject.depend
+*.layout
