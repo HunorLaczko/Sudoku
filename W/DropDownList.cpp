@@ -101,7 +101,6 @@ void DropDownList::handle(event ev)
     {
         if(ev.pos_x>x+a-arrow_size && ev.pos_x<x+a && ev.pos_y>y && ev.pos_y<y+b )
         {
-//            cout<<is_open<<endl;
             is_open=!is_open;
             ablak->invalidate();
         }
@@ -112,11 +111,6 @@ void DropDownList::handle(event ev)
             ablak->setFocus(-1);
             ablak->invalidate();
         }
-//        if(ev.pos_x>x && ev.pos_x<x+a - arrow_size && ev.pos_y>y+b && ev.pos_y<b*(1+items_visible)+y )
-//        {
-//            selected_item = (-y-b+ev.pos_y)/b + start_pos;
-//            setActive(false);
-//        }
         if(ev.pos_x>x+a - slider_width && ev.pos_x<x+a  && ev.pos_y>y+b && ev.pos_y<2*b+y && start_pos>0)
         {
             start_pos --;
@@ -128,8 +122,6 @@ void DropDownList::handle(event ev)
             start_pos++;
             ablak->invalidate();
         }
-
-
     }
 
 }
@@ -193,7 +185,6 @@ void DropDownList::draw()
             gout<<move_to(x+a - slider_width,y+2*b)<<color(200,200,200)<<box(slider_width,b*(items_visible-2));
             gout<<move_to(x+a - slider_width,y+b+b+start_pos*slider_height)<<color(120,120,120)<<box(slider_width,slider_height);
         }
-//        gout<<move_to(x+a-slider_width, (items_visible)*b+y) << color(255,0,255)<<box(slider_width,b);
     }
 
 }

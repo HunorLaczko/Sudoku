@@ -1,9 +1,6 @@
 #ifndef TEXTBOX_HPP_INCLUDED
 #define TEXTBOX_HPP_INCLUDED
 
-#include "widget.hpp"
-
-
 namespace W
 {
 class TextBox:public Widget

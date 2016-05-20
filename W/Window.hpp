@@ -38,9 +38,7 @@ public:
     virtual void draw();
     void setFocus(Widget *w);
     void setFocus(int _focus);
-
     void addWidget(Widget *w);
-
     virtual void Update();
     void invalidate();
 

@@ -53,7 +53,6 @@ void Window::handle(event ev)
                     if(focus!=-1 && (signed)i!=focus)
                     {
                         widgets[focus]->setActive(false);
-//                        widgets[focus]->handle(ev);
                     }
                     focus = i;
                     widgets[focus]->setActive(true);
@@ -67,16 +66,12 @@ void Window::handle(event ev)
                 focus=-1;
                 invalidate();
             }
-
         }
-
-//        cout<<focus<<endl;
     }
 
     if(focus!=-1 && !re_focus)
     {
         widgets[focus]->handle(ev);
-//        invalidate();
     }
 
 }

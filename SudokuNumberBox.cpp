@@ -16,27 +16,35 @@ bool SudokuNumberBox::is_focusable()
 
 void SudokuNumberBox::draw()
 {
-    gout<<move_to(x,y)<<color(col.r,col.g,col.b)<<box(a,b);
-    if(selected)
+    if(modifiable)
     {
-        gout<<move_to(x,y)<<color(51,153,255);
-        gout<<line(a,0)<<line(0,b)<<line(-a,0)<<line(0,-b);
+        gout<<move_to(x,y)<<color(col.r,col.g,col.b)<<box(a,b);
+    }
+    else
+    {
+        gout<<move_to(x,y)<<color(245,245,245)<<box(a,b);
     }
     if(value!=0)
     {
 
         if(valid)
         {
+
             gout<<move_to(x+(a-gout.twidth(to_string(value)))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(0,0,0)<<text(to_string(value));
         }
         else
         {
-            gout<<move_to(x+(a-gout.twidth(to_string(value)))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(255,0,0)<<text(to_string(value));
+            gout<<move_to(x,y)<<color(255,0,0)<<box(a,b);
+            gout<<move_to(x+(a-gout.twidth(to_string(value)))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(0,0,0)<<text(to_string(value));
         }
+    }
+        if(selected)
+    {
+        gout<<move_to(x,y)<<color(51,153,255);
+        gout<<line(a,0)<<line(0,b)<<line(-a,0)<<line(0,-b);
     }
 
 }
-
 
 void SudokuNumberBox::handle(event ev)
 {
@@ -76,10 +84,12 @@ void SudokuNumberBox::handle(event ev)
 void SudokuNumberBox::setValue(float x)
 {
     value = x;
+    ablak->invalidate();
 }
 void SudokuNumberBox::validation(bool x)
 {
     valid = x;
+    ablak->invalidate();
 }
 void SudokuNumberBox::change_modifiable(bool _modifiable)
 {

@@ -1,7 +1,7 @@
 #ifndef NUMBERBOX_HPP_INCLUDED
 #define NUMBERBOX_HPP_INCLUDED
 
-#include "widget.hpp"
+
 
 namespace W{
 class NumberBox:public Widget

@@ -1,8 +1,6 @@
 #ifndef MESSAGEBOX_HPP_INCLUDED
 #define MESSAGEBOX_HPP_INCLUDED
 
-#include "W/widget.hpp"
-
 namespace W
 {
     class MessageBox:public Widget

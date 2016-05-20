@@ -42,6 +42,8 @@
 		</Linker>
 		<Unit filename="GameCore.cpp" />
 		<Unit filename="GameCore.hpp" />
+		<Unit filename="MessageBox.cpp" />
+		<Unit filename="MessageBox.hpp" />
 		<Unit filename="SudokuNumberBox.cpp" />
 		<Unit filename="SudokuNumberBox.hpp" />
 		<Unit filename="SudokuWindow.cpp" />

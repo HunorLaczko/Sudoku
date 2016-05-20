@@ -22,24 +22,19 @@ SudokuWindow::SudokuWindow()
             if(tmp[i*9+j].value != 0)
             {
                 nr = new SudokuNumberBox(tmp_y, tmp_x,width,width,{255,255,255},true,this,tmp[i*9+j].value,false);
-
             }
             else
             {
-
                 nr = new SudokuNumberBox(tmp_y, tmp_x,width,width,{255,255,255},true,this,tmp[i*9+j].value,true);
-
             }
             widgets.push_back(nr);
             numbers.push_back(nr);
 
             tmp_y++;
-
-
         }
     }
     test = new Button(500,100,100,30,{255,255,255},false,this,"Reset",[this](){ Reset();});
-    message = new MessageBox(500,200,100,100,{255,255,255},false,this,"NYERTEL!",false);
+    message = new MessageBox(500,200,100,100,{255,255,255},false,this,"COMPLETED!",false);
     vector<string> lvl;
     lvl.push_back("Level 1");
     lvl.push_back("Level 2");
@@ -47,7 +42,7 @@ SudokuWindow::SudokuWindow()
     lvl.push_back("Level 4");
     lvl.push_back("Level 5");
     levels = new DropDownList(650,100,100,{255,255,255},false,this,lvl,5);
-    instructions = new Label(500,20,600,80,{220,220,220},false,this,"The objective is to fill a 9×9 grid with digits so that each column,\neach row, and each of the nine 3×3 sub-grids that compose the contains \nall of the digits from 1 to 9. ");
+    instructions = new Label(500,20,600,80,{220,220,220},false,this,"The objective is to fill a 9×9 grid with digits so that each column,\neach row, and each of the nine 3×3 sub-grids that compose the contains \nall of the digits from 1 to 9. \nYou can change the values with the mouse wheel or numpad.");
     widgets.push_back(test);
     widgets.push_back(message);
     widgets.push_back(levels);
@@ -57,11 +52,6 @@ SudokuWindow::SudokuWindow()
 
 void SudokuWindow::Update()
 {
-
-
-    game.debug();
-
-    cout<<"Update";
     vector<int> tmp;
     for(int i=0;i<81;i++)
     {
@@ -125,9 +115,7 @@ void SudokuWindow::draw()
             widgets[focus] -> draw();
 
         valid=true;
-        cout<<"z"<<endl<<focus;
     }
-
 }
 
 void SudokuWindow::Reset()
@@ -150,5 +138,4 @@ void SudokuWindow::Reset()
             numbers[i]->change_modifiable(false);
         }
     }
-
 }

@@ -15,8 +15,6 @@ void Label::draw()
             lines++;
         }
     }
-
-    cout<<"lines: "<<lines<<endl;
     gout<<move_to(x+(a-gout.twidth(value))/2,y+(b-gout.cascent()*lines-gout.cdescent()*lines)/2+gout.cascent())<<color(0,0,0)<<text(value);
 }
 

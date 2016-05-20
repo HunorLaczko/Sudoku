@@ -6,7 +6,7 @@
 	"Window.hpp"
 	"../SudokuWindow.hpp"
 
-1463732201 c:\ppke\bevprog2\github\sudoku\w\window.hpp
+1463742409 c:\ppke\bevprog2\github\sudoku\w\window.hpp
 	"widget.hpp"
 	"Label.hpp"
 	"TextBox.hpp"
@@ -35,34 +35,31 @@
 1461061126 c:\ppke\bevprog2\github\sudoku\include\graphics.hpp
 	<string>
 
-1462971911 c:\ppke\bevprog2\github\sudoku\w\label.hpp
-	"widget.hpp"
+1463743407 c:\ppke\bevprog2\github\sudoku\w\label.hpp
 
-1462971911 c:\ppke\bevprog2\github\sudoku\w\textbox.hpp
-	"widget.hpp"
+1463743428 c:\ppke\bevprog2\github\sudoku\w\textbox.hpp
 
-1463730157 c:\ppke\bevprog2\github\sudoku\w\numberbox.hpp
-	"widget.hpp"
+1463743494 c:\ppke\bevprog2\github\sudoku\w\numberbox.hpp
 
 1463341527 c:\ppke\bevprog2\github\sudoku\w\dropdownlist.hpp
 
 1462971911 c:\ppke\bevprog2\github\sudoku\w\checkbox.hpp
 
-1462971911 c:\ppke\bevprog2\github\sudoku\w\button.hpp
+1463743361 c:\ppke\bevprog2\github\sudoku\w\button.hpp
 
 1462971911 source:c:\ppke\bevprog2\github\sudoku\w\application.cpp
 	"Application.hpp"
 
-1462971911 source:c:\ppke\bevprog2\github\sudoku\w\button.cpp
+1463743361 source:c:\ppke\bevprog2\github\sudoku\w\button.cpp
 	"Window.hpp"
 
 1462971911 source:c:\ppke\bevprog2\github\sudoku\w\checkbox.cpp
 	"Window.hpp"
 
-1463737086 source:c:\ppke\bevprog2\github\sudoku\w\dropdownlist.cpp
+1463742446 source:c:\ppke\bevprog2\github\sudoku\w\dropdownlist.cpp
 	"Window.hpp"
 
-1463740765 source:c:\ppke\bevprog2\github\sudoku\w\label.cpp
+1463742483 source:c:\ppke\bevprog2\github\sudoku\w\label.cpp
 	"Window.hpp"
 
 1463344410 source:c:\ppke\bevprog2\github\sudoku\w\numberbox.cpp
@@ -75,11 +72,11 @@
 	"graphics.hpp"
 	"widget.hpp"
 
-1463732239 source:c:\ppke\bevprog2\github\sudoku\w\window.cpp
+1463742469 source:c:\ppke\bevprog2\github\sudoku\w\window.cpp
 	"Window.hpp"
 	<fstream>
 
-1463738990 source:c:\ppke\bevprog2\github\sudoku\gamecore.cpp
+1463742213 source:c:\ppke\bevprog2\github\sudoku\gamecore.cpp
 	"GameCore.hpp"
 
 1463739137 c:\ppke\bevprog2\github\sudoku\gamecore.hpp
@@ -88,11 +85,11 @@
 	<map>
 	<fstream>
 
-1463736491 c:\ppke\bevprog2\github\sudoku\sudokunumberbox.hpp
+1463743494 c:\ppke\bevprog2\github\sudoku\sudokunumberbox.hpp
 	"W/widget.hpp"
 	"W/NumberBox.hpp"
 
-1463736491 source:c:\ppke\bevprog2\github\sudoku\sudokunumberbox.cpp
+1463742783 source:c:\ppke\bevprog2\github\sudoku\sudokunumberbox.cpp
 	"W/Window.hpp"
 
 1463678590 c:\ppke\bevprog2\github\sudoku\sudokutable.hpp
@@ -102,17 +99,15 @@
 	"SudokuNumberBox.hpp"
 	"SudokuTable.hpp"
 
-1463739824 source:c:\ppke\bevprog2\github\sudoku\sudokuwindow.cpp
+1463743159 source:c:\ppke\bevprog2\github\sudoku\sudokuwindow.cpp
 	"SudokuWindow.hpp"
 
 1463739645 c:\ppke\bevprog2\github\sudoku\sudokuwindow.hpp
 	"SudokuTable.hpp"
 	"W/Window.hpp"
 
-1463730846 c:\ppke\bevprog2\github\sudoku\messagebox.hpp
-	"W/widget.hpp"
+1463743443 c:\ppke\bevprog2\github\sudoku\messagebox.hpp
 
-1463731356 source:c:\ppke\bevprog2\github\sudoku\messagebox.cpp
+1463743279 source:c:\ppke\bevprog2\github\sudoku\messagebox.cpp
 	"W/Window.hpp"
-	"MessageBox.hpp"
 

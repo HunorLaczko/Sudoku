@@ -2,8 +2,6 @@
 #define LABEL_HPP_INCLUDED
 
 
-#include "widget.hpp"
-
 namespace W{
 
 class Label:public Widget
