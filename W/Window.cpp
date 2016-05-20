@@ -30,17 +30,11 @@ int to_int(string s)
 Window::Window()
 {
     focus = -1;
-    valid = true;
+    valid = false;
 }
 
 void Window::handle(event ev)
 {
-    if(!valid)
-    {
-        Update();
-    }
-
-
     bool talalt=false;
     bool re_focus = false;
     if(ev.type==ev_mouse && ev.button==btn_left)
@@ -64,12 +58,14 @@ void Window::handle(event ev)
                     focus = i;
                     widgets[focus]->setActive(true);
                     talalt=true;
+                    invalidate();
                 }
             }
             if(!talalt && focus!=-1)
             {
                 widgets[focus]->setActive(false);
                 focus=-1;
+                invalidate();
             }
 
         }
@@ -80,12 +76,16 @@ void Window::handle(event ev)
     if(focus!=-1 && !re_focus)
     {
         widgets[focus]->handle(ev);
+//        invalidate();
     }
 
 }
 
 void Window::draw()
 {
+    if(!valid)
+    {
+        Update();
     gout<<move_to(0,0)<<color(220,220,220)<<box(size_x,size_y);
     for(Widget* &w:widgets)
     {
@@ -93,6 +93,8 @@ void Window::draw()
     }
     if(focus!=-1)
         widgets[focus] -> draw();
+    valid=true;
+    }
 }
 
 void Window::setFocus(Widget* w)
@@ -120,6 +122,11 @@ void Window::invalidate()
 void Window::Update()
 {
 
+}
+
+void Window::setFocus(int _focus)
+{
+    focus=_focus;
 }
 
 }

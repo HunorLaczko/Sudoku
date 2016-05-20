@@ -27,6 +27,10 @@ public:
     void debug();
     vector<int_bool> SendCurrentState();
     void getNewState(vector<int> tmp);
+    bool win();
+    void ChooseLevel(int _level);
+    int getLevel();
+    void reset();
 };
 
 

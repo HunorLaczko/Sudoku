@@ -5,7 +5,7 @@ using namespace W;
 const int arrow_size = 20;
 const int slider_width = 20;
 
-DropDownList::DropDownList(float xx, float yy, float aa, Color coll, bool akt, Window *win, vector<string> it, int i_vis):Widget(xx,yy,aa,25,coll,akt,win),items(it),start_pos(0),items_visible(i_vis),selected_item(-1),mouse_over_item(-1),is_open(false){}
+DropDownList::DropDownList(float xx, float yy, float aa, Color coll, bool akt, Window *win, vector<string> it, int i_vis):Widget(xx,yy,aa,25,coll,akt,win),items(it),start_pos(0),items_visible(i_vis),selected_item(0),mouse_over_item(-1),is_open(false){}
 
 void DropDownList::setActive(bool value)
 {
@@ -75,21 +75,25 @@ void DropDownList::handle(event ev)
         if(ev.pos_x>x && ev.pos_x<x+a - slider_width && ev.pos_y>y+b && ev.pos_y<b*(1+items_visible)+y )
         {
             mouse_over_item = (-y-b+ev.pos_y)/b + start_pos;
-//            cout<<mouse_over_item <<endl;
+            ablak->invalidate();
         }
         if(!is_selected(ev.pos_x, ev.pos_y))
         {
             mouse_over_item = -1;
+            ablak->invalidate();
         }
+
 
     }
     if( ( (ev.type == ev_key && ev.keycode == key_up) || (ev.type == ev_mouse && ev.button == btn_wheelup)) && start_pos>0)
     {
         start_pos--;
+        ablak->invalidate();
     }
     if(( (ev.type == ev_key && ev.keycode == key_down) || (ev.type == ev_mouse && ev.button == btn_wheeldown) ) && start_pos+items_visible<(signed)items.size())
     {
         start_pos++;
+        ablak->invalidate();
     }
 
 
@@ -99,11 +103,14 @@ void DropDownList::handle(event ev)
         {
 //            cout<<is_open<<endl;
             is_open=!is_open;
+            ablak->invalidate();
         }
         if(ev.pos_x>x && ev.pos_x<x+a- slider_width && ev.pos_y>y+b && ev.pos_y<b*(1+items_visible)+y )
         {
             selected_item = (-y-b+ev.pos_y)/b + start_pos;
             setActive(false);
+            ablak->setFocus(-1);
+            ablak->invalidate();
         }
 //        if(ev.pos_x>x && ev.pos_x<x+a - arrow_size && ev.pos_y>y+b && ev.pos_y<b*(1+items_visible)+y )
 //        {
@@ -113,12 +120,15 @@ void DropDownList::handle(event ev)
         if(ev.pos_x>x+a - slider_width && ev.pos_x<x+a  && ev.pos_y>y+b && ev.pos_y<2*b+y && start_pos>0)
         {
             start_pos --;
+            ablak->invalidate();
         }
 
         if(ev.pos_x>x+a - slider_width && ev.pos_x<x+a  && ev.pos_y>y+b*items_visible && ev.pos_y<(items_visible+1)*b+y && start_pos+items_visible<(signed)items.size())
         {
             start_pos++;
+            ablak->invalidate();
         }
+
 
     }
 

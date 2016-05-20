@@ -17,6 +17,7 @@ namespace W
         void handle(event ev);
         void setValue(float x);
         void validation(bool x);
+        void change_modifiable(bool _modifiable);
     };
 }
 

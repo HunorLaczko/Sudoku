@@ -7,6 +7,16 @@
 void Label::draw()
 {
     gout<<move_to(x,y)<<color(col.r,col.g,col.b)<<box(a,b);
-    gout<<move_to(x+(a-gout.twidth(value))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(0,0,0)<<text(value);
+    int lines=1;
+    for(size_t i=0;i<value.size()-1;i++)
+    {
+        if(value[i] == '\n' )
+        {
+            lines++;
+        }
+    }
+
+    cout<<"lines: "<<lines<<endl;
+    gout<<move_to(x+(a-gout.twidth(value))/2,y+(b-gout.cascent()*lines-gout.cdescent()*lines)/2+gout.cascent())<<color(0,0,0)<<text(value);
 }
 

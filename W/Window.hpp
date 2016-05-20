@@ -12,6 +12,7 @@
 #include "../SudokuTable.hpp"
 #include "../SudokuNumberBox.hpp"
 #include "../GameCore.hpp"
+#include "../MessageBox.hpp"
 
 namespace W
 {
@@ -34,8 +35,10 @@ public:
     virtual ~Window(){}
     unsigned int size();
     void handle(event ev);
-    void draw();
+    virtual void draw();
     void setFocus(Widget *w);
+    void setFocus(int _focus);
+
     void addWidget(Widget *w);
 
     virtual void Update();

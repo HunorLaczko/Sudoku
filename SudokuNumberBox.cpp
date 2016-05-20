@@ -25,14 +25,14 @@ void SudokuNumberBox::draw()
     if(value!=0)
     {
 
-    if(valid)
-    {
-        gout<<move_to(x+(a-gout.twidth(to_string(value)))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(0,0,0)<<text(to_string(value));
-    }
-    else
-    {
-        gout<<move_to(x+(a-gout.twidth(to_string(value)))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(255,0,0)<<text(to_string(value));
-    }
+        if(valid)
+        {
+            gout<<move_to(x+(a-gout.twidth(to_string(value)))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(0,0,0)<<text(to_string(value));
+        }
+        else
+        {
+            gout<<move_to(x+(a-gout.twidth(to_string(value)))/2,y+(b-gout.cascent()-gout.cdescent())/2+gout.cascent())<<color(255,0,0)<<text(to_string(value));
+        }
     }
 
 }
@@ -47,23 +47,28 @@ void SudokuNumberBox::handle(event ev)
             if(ev.type==ev_key && (ev.keycode==key_up || ev.keycode==key_pgup) && value<interval_end)
             {
                 value+=step;
+                ablak->invalidate();
             }
             if(ev.type==ev_key && (ev.keycode==key_down || ev.keycode==key_pgdn) && value>interval_start)
             {
                 value-=step;
+                ablak->invalidate();
             }
         }
         if(ev.type==ev_key && ev.keycode >= '1' && ev.keycode <= '9')
         {
             value = ev.keycode - '0';
+            ablak->invalidate();
         }
         if(ev.type==ev_mouse && ev.button==btn_wheeldown && value<interval_end)
         {
             value+=step;
+            ablak->invalidate();
         }
         if(ev.type==ev_mouse && ev.button==btn_wheelup && value>interval_start)
         {
             value-=step;
+            ablak->invalidate();
         }
     }
 }
@@ -76,6 +81,9 @@ void SudokuNumberBox::validation(bool x)
 {
     valid = x;
 }
-
+void SudokuNumberBox::change_modifiable(bool _modifiable)
+{
+    modifiable = _modifiable;
+}
 
 

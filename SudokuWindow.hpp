@@ -11,10 +11,15 @@ namespace W
         SudokuGame game;
         vector<SudokuNumberBox*> numbers;
         Button *test;
+        MessageBox *message;
+        DropDownList *levels;
+        Label *instructions;
     public:
         SudokuWindow();
         ~SudokuWindow(){}
+        void draw();
         void Update();
+        void Reset();
     };
 }
 
